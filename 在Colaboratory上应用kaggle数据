@@ -1,0 +1,12 @@
+#在Colaboratory命令行输入如下内容
+!pip install kaggle 
+!mkdir /root/.kaggle
+api_token = {"username":"dandeliony","key":"22c3087d7d15ccc60e01e60e4f199c44"}
+import json
+import zipfile
+import os
+with open('/root/.kaggle/kaggle.json', 'w') as file:
+    json.dump(api_token, file)
+#配置赛题数据的api即可    
+!kaggle competitions download -c favorita-grocery-sales-forecasting  
+    
