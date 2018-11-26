@@ -16,6 +16,8 @@ df.info()   #查看数据框 (DataFrame) 的索引、数据类型及内存信息
 s.astype(float) # 将数组(Series)的格式转化为浮点数
 df.rename(columns=lambda x: x + 2) # 将全体列重命名
 df.rename(columns={'old_name': 'new_ name'}) # 将选择的列重命名
+df.describe() # 对于数据类型为数值型的列，查询其描述性统计的内容
+#df.apply(pd.Series.value_counts) # 查询数据框 (Data Frame) 中每个列的独特数据值出现次数统计
 
 #缺失值处理
 df.fillna(x) # 将数据框 DataFrame 中的所有空值替换为 x
