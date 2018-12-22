@@ -27,3 +27,16 @@ s.replace([1,3],['one','three']) # 将数组(Series)中所有的1替换为'one',
 
 df.set_index('column_one') # 改变索引
 df.rename(index = lambda x: x+ 1) # 改变全体索引
+
+
+#等频分箱   pd.qcut() 
+>>> pd.qcut(factors, 3) #返回每个数对应的分组
+>>> pd.qcut(factors, 3).value_counts() #计算每个分组中含有的数的数量
+>>> pd.qcut(factors, 3,labels=["a","b","c"]) #返回每个数对应的分组，但分组名称由label指示
+>>> pd.qcut(factors, 3,labels=False) #返回每个数对应的分组，但仅显示分组下标
+#等宽分箱   pd.cut()   
+>>> pd.cut(factors, 3) #返回每个数对应的分组
+>>> pd.cut(factors, bins=[-3,-2,-1,0,1,2,3])
+>>> pd.cut(factors, 3).value_counts() #计算每个分组中含有的数的数量
+>>> pd.cut(factors, 3,labels=["a","b","c"]) #返回每个数对应的分组，但分组名称由label指示
+>>> pd.cut(factors, 3,labels=False) #返回每个数对应的分组，但仅显示分组下标
